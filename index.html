@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nosso Cantinho</title>
+    <link rel="stylesheet" href="css/style.css?v=20260829-4">
+</head>
+<body>
+
+    <!-- ========================================== -->
+    <!-- TELA DE INÍCIO                              -->
+    <!-- ========================================== -->
+    <div id="tela-inicio" class="tela tela-inicio ativa">
+        <div class="cartao-inicio">
+            <div class="selo-edicao"><strong>DC</strong><span>EDIÇÃO<br>ESPECIAL</span></div>
+            <img class="retrato-nightwing" src="assets/tema/asa-noturna-oficial.jpg" alt="Asa Noturna">
+            <p class="chamada-capa">UMA AVENTURA EM BLÜDHAVEN</p>
+            <h1 class="titulo-inicio">NOSSO<br>CANTINHO</h1>
+            <p class="subtitulo-inicio">Uma edição especial feita só para você.</p>
+            <div class="botoes-inicio">
+                <button id="btn-sim" class="botao botao-sim">ABRIR HQ →</button>
+                <button id="btn-nao" class="botao botao-nao">GUARDAR</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- ========================================== -->
+    <!-- MENU PRINCIPAL                              -->
+    <!-- ========================================== -->
+    <div id="tela-menu" class="tela">
+        <header class="cabecalho">
+            <div class="marca-site">
+                <span class="marca-coracao" aria-hidden="true">V</span>
+                <div>
+                    <small class="numero-edicao">EDIÇÃO ESPECIAL · Nº 01</small>
+                    <h1 class="titulo-principal">Nosso Cantinho</h1>
+                </div>
+            </div>
+            <button id="btn-musica" class="botao-musica" title="Música">🔊</button>
+        </header>
+
+        <figure class="painel-nightwing" aria-label="Asa Noturna, protetor de Blüdhaven">
+            <img src="assets/tema/nightwing-acao.jpg" alt="Ilustração oficial do Asa Noturna diante de Blüdhaven">
+            <figcaption>
+                <span>PROTETOR DE</span>
+                <strong>BLÜDHAVEN</strong>
+            </figcaption>
+        </figure>
+
+        <main class="menu-principal">
+            <p class="legenda-quadro">BLÜDHAVEN, AGORA. UMA NOVA HISTÓRIA ESTÁ PRESTES A COMEÇAR...</p>
+            <button class="botao-menu" data-secao="dedicatorias">📨 Dedicatórias</button>
+            <button class="botao-menu" data-secao="midias">📁 Mídias</button>
+            <button class="botao-menu" data-secao="surpresa">🎁 Surpresa</button>
+            <div class="detalhes-nightwing" aria-label="Referências ao Asa Noturna">
+                <span>⚡ Dick Grayson</span>
+                <span>🏙️ Blüdhaven</span>
+                <span>🥢 Bastões de escrima</span>
+                <span>🎪 Ex-acrobata</span>
+            </div>
+        </main>
+    </div>
+
+    <!-- ========================================== -->
+    <!-- SEÇÃO: DEDICATÓRIAS                         -->
+    <!-- ========================================== -->
+    <div id="tela-dedicatorias" class="tela secao-interna">
+        <header class="cabecalho-secao">
+            <button class="botao-voltar">← Voltar</button>
+            <h2>💌 Dedicatórias</h2>
+            <div class="espaco"></div>
+        </header>
+        <main id="conteudo-dedicatorias" class="conteudo-dedicatorias">
+            <!-- Cartas são geradas via JavaScript -->
+        </main>
+    </div>
+
+    <!-- ========================================== -->
+    <!-- SEÇÃO: MÍDIAS (LIVRO)                       -->
+    <!-- ========================================== -->
+    <div id="tela-midias" class="tela secao-interna">
+        <header class="cabecalho-secao">
+            <button class="botao-voltar">← Voltar</button>
+            <h2>📖 Mídias</h2>
+            <div class="espaco"></div>
+        </header>
+        <main class="conteudo-midias">
+            <div class="livro-container">
+                <button class="seta-livro seta-esquerda" id="livro-anterior">←</button>
+                <div class="livro">
+                    <div class="pagina esquerda" id="pagina-esquerda"></div>
+                    <div class="pagina direita" id="pagina-direita"></div>
+                </div>
+                <button class="seta-livro seta-direita" id="livro-proxima">→</button>
+            </div>
+            <div class="contador-paginas" id="contador-paginas">1 / 1</div>
+        </main>
+    </div>
+
+    <!-- ========================================== -->
+    <!-- SEÇÃO: SURPRESA                             -->
+    <!-- ========================================== -->
+    <div id="tela-surpresa" class="tela secao-interna">
+        <header class="cabecalho-secao">
+            <button class="botao-voltar">← Voltar</button>
+            <h2>🎁 Surpresa</h2>
+            <div class="espaco"></div>
+        </header>
+        <main class="conteudo-surpresa">
+            <div class="surpresa-container" id="surpresa-container">
+                <p class="texto-surpresa-intro">Você chegou até aqui...</p>
+                <button class="botao botao-surpresa" id="btn-abrir-surpresa">Abrir surpresa</button>
+            </div>
+            <div class="surpresa-revelada" id="surpresa-revelada" style="display: none;">
+                <article class="carta-surpresa" aria-labelledby="titulo-carta-surpresa">
+                    <span class="carta-surpresa-detalhe" aria-hidden="true">♡</span>
+                    <p class="carta-surpresa-saudacao">Uma carta para o amor da minha vida</p>
+                    <h3 id="titulo-carta-surpresa">Feliz 1 ano de nós</h3>
+                    <div class="texto-surpresa-final" id="texto-surpresa-final"></div>
+                    <footer class="carta-surpresa-assinatura">Com todo o meu amor ♡</footer>
+                </article>
+            </div>
+        </main>
+    </div>
+
+    <!-- ========================================== -->
+    <!-- MODAL: CARTA (DEDICATÓRIA)                  -->
+    <!-- ========================================== -->
+    <div id="modal-carta" class="modal">
+        <div class="modal-conteudo carta-modal-conteudo">
+            <button class="modal-fechar" id="carta-fechar">×</button>
+            <h3 id="carta-titulo"></h3>
+            <img class="carta-gif-modal" id="carta-gif-modal" src="" alt="">
+            <p id="carta-texto"></p>
+        </div>
+    </div>
+
+    <!-- ========================================== -->
+    <!-- EFEITO: CORAÇÕES/CONFETES                   -->
+    <!-- ========================================== -->
+    <div id="efeito-container" class="efeito-container"></div>
+
+    <script src="js/script.js?v=20260829-7"></script>
+</body>
+</html>
